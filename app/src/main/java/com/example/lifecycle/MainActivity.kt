@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Main4Activity::class.java))
         }
 
+        // Test 3 :
         btn_3.setOnClickListener {
             startActivity(Intent(this, Main7Activity::class.java))
         }
