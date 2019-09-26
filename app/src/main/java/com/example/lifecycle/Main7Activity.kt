@@ -1,5 +1,6 @@
 package com.example.lifecycle
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
@@ -25,6 +26,11 @@ class Main7Activity : AppCompatActivity() {
                 .setNegativeButton(android.R.string.no, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show()
+        }
+
+        btn_dialog_activity.setOnClickListener {
+            Log.d("lifecycle-test", "show activity as dialog button clicked")
+            startActivity(Intent(this, DialogActivity::class.java))
         }
     }
 
