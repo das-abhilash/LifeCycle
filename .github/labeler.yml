@@ -50,4 +50,4 @@ feature-activity:
   - '**/**/*.xml'
 
 feature-activity2:
-  - '**/res/*.xml'
+  - '**/lauout/*.xml'
