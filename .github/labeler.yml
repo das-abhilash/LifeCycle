@@ -52,5 +52,8 @@ feature-activity:
 feature-activity2:
   - '**/layout/*.xml'
 
-feature-layout:
-  - '**/layout/*.xml'
+feature-drawable:
+  - '**/drawable/*.xml'
+
+drawable:
+  - '**/drawable/*.xml'
