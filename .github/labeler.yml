@@ -41,10 +41,24 @@ tests:
 ############################################################
 
 core:
-  - "*.gradle"
-  - "*/*.gradle"
+  - settings.gradle
   - "*.kts"
   - "*.jks"
+  - "*.js"
   - "*.pro"
+  - .gitattributes
+  - .gitignore
+  - .gitmodules
+  - gradle.properties
+  - detekt-baseline.xml
+  - commitlint.config.js
+  - settings.gradle.kts
+
+
+
+
+
+feature:
+  - "*/*.gradle"
 
 
