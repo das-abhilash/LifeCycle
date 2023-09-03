@@ -46,5 +46,5 @@ core:
   - "*.jks"
   - "*.pro"
 
-feature:
-  - app/**
+feature-activity:
+  - '**/**/*.xml'
