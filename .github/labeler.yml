@@ -2,13 +2,6 @@
 
 
 ############################################################
-#  Top Level Labels
-############################################################
-repo:
-  - ./*
-
-
-############################################################
 #  Documentation
 ############################################################
 documentation:
@@ -53,6 +46,17 @@ core:
   - detekt-baseline.xml
   - commitlint.config.js
   - settings.gradle.kts
+  - /batcher/**
+  - /auth/**
+  - /fastlane/**
+  - /danger/**
+  - /jetifier-libs/**
+  - /scripts/**
+  - /static-analysis/**
+  - /.github/**
+  - /.husky/**
+  - app/src/main/java/com/dreamplug/androidapp/analytics/PriorityEventCheck.kt
+  - app/src/main/java/com/dreamplug/androidapp/DreamApplication.kt
 
 
 
