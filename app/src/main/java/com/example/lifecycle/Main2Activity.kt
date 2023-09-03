@@ -17,6 +17,8 @@ class Main2Activity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onPause() {
         Log.d("lifecycle-test","Main2Activity - onPause")
         super.onPause()

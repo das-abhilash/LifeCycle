@@ -59,6 +59,6 @@ core:
 
 
 feature:
-  - "*/*.gradle"
+  - app/**
 
 
