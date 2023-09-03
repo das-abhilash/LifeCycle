@@ -55,5 +55,11 @@ feature-activity2:
 feature-drawable:
   - '**/drawable/*.xml'
 
+  
+sdfsdfr:
+  - '**/drawable/**'
+
 drawable:
   - '**/drawable/*.xml'
+
+  
