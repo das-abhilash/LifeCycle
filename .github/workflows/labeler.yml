@@ -21,12 +21,8 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          pr-number: |
-          1
-          2
-          3
       - id: run-frontend-tests
-      if: contains(steps.label-the-PR.outputs.all-labels, 'github')
-      run: |
-        echo "Running frontend tests..."
+        if: contains(steps.label-the-PR.outputs.all-labels, 'github')
+        run: |
+          echo "Running frontend tests..."
         
