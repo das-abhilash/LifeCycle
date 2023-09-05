@@ -28,4 +28,4 @@ jobs:
     steps:
       - id: tag
         run: |
-         echo "tags ${needs.label.outputs.labels}"
+         echo "tags ${{needs.label.outputs.labels}}"
