@@ -14,7 +14,8 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-
+    outputs:
+      labels: ${{ steps.label-the-PR.outputs.all-labels }}
     steps:
       - id: label-the-PR
         uses: actions/labeler@v4
@@ -27,4 +28,4 @@ jobs:
     steps:
       - id: tag
         run: |
-         echo "tags ${label.steps.label-the-PR.outputs.all-labels}"
+         echo "tags ${needs.label.outputs.labels}"
