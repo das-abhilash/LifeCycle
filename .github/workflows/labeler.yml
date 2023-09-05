@@ -10,7 +10,6 @@ on: [pull_request_target]
 
 jobs:
   label:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,8 +20,10 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-      - id: run-frontend-tests
-        if: contains(steps.label-the-PR.outputs.all-labels, 'github')
+
+  tags:
+    runs-on: ubuntu-latest
+    steps:
+      - id: tag
         run: |
-          echo "Running frontend tests..."
-        
+         echo "tags ${label.steps.label-the-PR.outputs.all-labels}"
