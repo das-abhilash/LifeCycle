@@ -23,6 +23,7 @@ jobs:
 
   tags:
     runs-on: ubuntu-latest
+    needs: [label]
     steps:
       - id: tag
         run: |
