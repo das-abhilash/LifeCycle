@@ -27,8 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [label]
     steps:
-      - id: tag
-        name: check
+      - name: check
         if: contains(needs.label.outputs.labels, 'core')
         run: |
          echo "${contains(${{needs.label.outputs.labels}}, 'frontend')}"
