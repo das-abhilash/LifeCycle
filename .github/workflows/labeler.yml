@@ -28,6 +28,7 @@ jobs:
     needs: [label]
     steps:
       - id: tag
+        if: contains(${{needs.label.outputs.labels}}, 'frontend')
         run: |
          echo "tags ${{needs.label.outputs.labels}}"
          ./gradlew :app:test
