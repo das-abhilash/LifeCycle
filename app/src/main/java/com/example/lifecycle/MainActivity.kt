@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
         *
         * */
 
-
-
         // Test 1 :
         btn_1.setOnClickListener {
             startActivity(Intent(this, Main2Activity::class.java))

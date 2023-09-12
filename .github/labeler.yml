@@ -67,4 +67,20 @@ core:
 feature:
   - "*/*.gradle"
 
+feature-activity:
+  - '**/**/*.xml'
 
+feature-activity2:
+  - '**/layout/*.xml'
+
+feature-drawable:
+  - '**/drawable/*.xml'
+
+  
+sdfsdfr:
+  - '**/drawable/**'
+
+drawable:
+  - '**/drawable/*.xml'
+
+  
