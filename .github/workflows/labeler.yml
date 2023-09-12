@@ -23,9 +23,11 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
   tags:
+    name: run tests
     runs-on: ubuntu-latest
     needs: [label]
     steps:
       - id: tag
         run: |
          echo "tags ${{needs.label.outputs.labels}}"
+         ./gradlew :app:test
