@@ -6,8 +6,13 @@ on:
     workflows: ["labeler"]
     types:
       - completed
+  repository_dispatch:
+    types: [my-event]
 
 jobs:
+  job1:
+    uses: /LifeCycle/.github/workflows/labeler.yml@v1
+
   notify:
     runs-on: ubuntu-latest
 
@@ -16,4 +21,4 @@ jobs:
 
       - name: Notify Slack and send eMail
         run: |
-          echo "ci notify"
+          echo "labels : echo ${{ github.event.client_payload }}"

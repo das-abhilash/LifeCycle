@@ -6,7 +6,7 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-on: [pull_request_target]
+on: [ pull_request_target ]
 
 jobs:
   label:
@@ -21,4 +21,9 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+            token: ${{ secrets.PAT }}
+            event-type: my-event
+            client-payload: '${{ steps.label-the-PR.outputs.all-labels }}'
