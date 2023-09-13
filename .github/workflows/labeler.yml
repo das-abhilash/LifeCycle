@@ -22,10 +22,3 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
-  tags:
-    runs-on: ubuntu-latest
-    needs: [label]
-    steps:
-      - id: tag
-        run: |
-         echo "tags ${needs.label.outputs.labels}"
