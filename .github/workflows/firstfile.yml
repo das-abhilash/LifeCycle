@@ -13,9 +13,9 @@ jobs:
 
     steps:
 
-      - name: Notify Slack and send eMail
+      - uses: actions/checkout@v2
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: notify
         run: |
