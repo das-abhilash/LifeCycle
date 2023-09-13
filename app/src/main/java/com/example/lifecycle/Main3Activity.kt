@@ -28,7 +28,7 @@ class Main3Activity : AppCompatActivity() {
     }
 
     override fun onStop() {
-        Log.d("lifecycle-test","Main3Activity - onStop")
+        Log.d("lifecycle-test"," df Main3Activity - onStop")
         super.onStop()
     }
 

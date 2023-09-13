@@ -2,17 +2,11 @@
 
 
 ############################################################
-#  Top Level Labels
-############################################################
-repo:
-  - ./*
-
-
-############################################################
 #  Documentation
 ############################################################
 documentation:
   - "*.md"
+
 
 ############################################################
 #  Tools + Development Items
@@ -41,10 +35,37 @@ tests:
 
 core:
   - "*.gradle"
-  - "*/*.gradle"
   - "*.kts"
   - "*.jks"
+  - "*.js"
   - "*.pro"
+  - .gitattributes
+  - .gitignore
+  - .gitmodules
+  - gradle.properties
+  - detekt-baseline.xml
+  - commitlint.config.js
+  - settings.gradle.kts
+  - /batcher/**
+  - /auth/**
+  - /fastlane/**
+  - /danger/**
+  - /jetifier-libs/**
+  - /scripts/**
+  - /static-analysis/**
+  - /.github/**
+  - /.husky/**
+  - app/src/main/java/com/dreamplug/androidapp/analytics/PriorityEventCheck.kt
+  - app/src/main/java/com/dreamplug/androidapp/DreamApplication.kt
+
+
+
+
+
+
+
+feature:
+  - "*/*.gradle"
 
 feature-activity:
   - '**/**/*.xml'
