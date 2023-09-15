@@ -10,14 +10,16 @@ on:
     types: [my-event]
 
 jobs:
+  job1:
+    uses: /LifeCycle/.github/workflows/labeler.yml@v1
 
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
-        with:
-          ref: ${{ github.event.client_payload.ref }}
-      - name: Check release URL
+      - uses: actions/checkout@v2
+
+      - name: Notify Slack and send eMail
         run: |
-          echo "labels ${{ github.event.client_payload.ref }}"
+
+          echo "labels : echo ${{ github.event.client_payload }}"
