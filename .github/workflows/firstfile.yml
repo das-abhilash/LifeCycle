@@ -23,5 +23,5 @@ jobs:
 
       - name: Display Artifact Content
         run: |
-               cat artifact.txt
+               cat my-artifact/artifact.txt
                echo "${{artifact.txt}}"
