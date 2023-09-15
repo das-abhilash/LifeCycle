@@ -21,6 +21,8 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Build and create artifacts
         run: |
