@@ -14,13 +14,15 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+      id-token: 'write'
+      issues: 'write'
     outputs:
       labels: ${{ steps.label-the-PR.outputs.all-labels }}
     steps:
       - id: label-the-PR
         uses: actions/labeler@v4
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          repo-token: "${{ secrets.PAT }}"
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
