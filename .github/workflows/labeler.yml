@@ -14,7 +14,6 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      id-token: 'write'
       issues: 'write'
     outputs:
       labels: ${{ steps.label-the-PR.outputs.all-labels }}
