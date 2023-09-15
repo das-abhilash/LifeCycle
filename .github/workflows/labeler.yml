@@ -6,7 +6,7 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-on: [ pull_request_target ]
+on: [pull_request_target]
 
 jobs:
   label:
@@ -14,17 +14,22 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      issues: 'write'
     outputs:
       labels: ${{ steps.label-the-PR.outputs.all-labels }}
     steps:
       - id: label-the-PR
         uses: actions/labeler@v4
         with:
-          repo-token: "${{ secrets.PAT }}"
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Build and create artifacts
+        run: |
+            # Your build steps here
+            echo "This is the artifact content" > artifact.txt
+            # Upload the artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            event-type: my-event
-            client-payload: '{"ref":"${{ steps.label-the-PR.outputs.all-labels }}"}'
+          name: my-artifact
+          path: artifact.txt
+
