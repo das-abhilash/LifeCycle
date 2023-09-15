@@ -24,6 +24,6 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
-            token: ${{ secrets.PAT }}
+            token: ${{ secrets.GITHUB_TOKEN }}
             event-type: my-event
-            client-payload: '${{ steps.label-the-PR.outputs.all-labels }}'
+            client-payload: '{"ref":"${{ steps.label-the-PR.outputs.all-labels }}"}'
