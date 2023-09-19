@@ -1,0 +1,19 @@
+Index: .github/workflows/labeler.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># This workflow will triage pull requests and apply a label based on the\n# paths that are modified in the pull request.\n#\n# To use this workflow, you will need to set up a .github/labeler.yml\n# file with configuration.  For more information, see:\n# https://github.com/actions/labeler\n\nname: Labeler\non: [ pull_request_target ]\n\njobs:\n  label:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      pull-requests: write\n    outputs:\n      labels: ${{ steps.label-the-PR.outputs.all-labels }}\n    steps:\n      - id: label-the-PR\n        uses: actions/labeler@v4\n        with:\n          repo-token: \"${{ secrets.GITHUB_TOKEN }}\"\n      - name: Repository Dispatch\n        uses: peter-evans/repository-dispatch@v1\n        with:\n            token: ${{ secrets.GITHUB_TOKEN }}\n            event-type: my-event\n            client-payload: '{\"ref\":\"${{ steps.label-the-PR.outputs.all-labels }}\"}'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+--- a/.github/workflows/labeler.yml	(revision 974ece69ef8283eeb13b30c4c5578d503c63140a)
++++ b/.github/workflows/labeler.yml	(date 1694765029651)
+@@ -20,7 +20,7 @@
+       - id: label-the-PR
+         uses: actions/labeler@v4
+         with:
+-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
++          repo-token: "${{ secrets.PAT }}"
+       - name: Repository Dispatch
+         uses: peter-evans/repository-dispatch@v1
+         with:

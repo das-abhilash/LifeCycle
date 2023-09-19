@@ -6,20 +6,29 @@ on:
     workflows: ["labeler"]
     types:
       - completed
-  repository_dispatch:
-    types: [my-event]
 
 jobs:
-  job1:
-    uses: /LifeCycle/.github/workflows/labeler.yml@v1
 
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Notify Slack and send eMail
+      - name: Environment Variables
+        shell: bash
         run: |
-
-          echo "labels : echo ${{ github.event.client_payload }}"
+            ARTIFACTS_SHA=$(git rev-parse HEAD)
+            BUILD_ARTIFACTS=BuildArtifacts_${ARTIFACTS_SHA}
+            echo "ARTIFACTS_DIR=$ARTIFACTS_DIR" >> $GITHUB_ENV
+      - name: Download Artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: Build.yml
+          name: ${{ env.BUILD_ARTIFACTS }}
+        run: |
+          echo "BUILD_ARTIFACTS"
+          echo "${{ env.BUILD_ARTIFACTS }}"
+          echo "${{ env.BUILD_ARTIFACTS }}"
