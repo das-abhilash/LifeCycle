@@ -27,8 +27,8 @@ jobs:
           ls -l
           cd my-artifact
           ls -l
-          cat world.txt
+          echo `cat world.txt` >> $GITHUB_ENV
       - name: Print
         run: |
-          echo "${{steps.Read.outputs.content}}"
-          echo "${{steps.Read.outputs}}"
+          echo "${{GITHUB_ENV}}"
+          echo "$GITHUB_ENV"
