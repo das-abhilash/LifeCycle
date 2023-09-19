@@ -24,7 +24,7 @@ jobs:
           name: ${{ env.BUILD_ARTIFACTS }}
       - shell: bash
         run: |
-            value=`cat my-artifact/world.txt.txt`
-            echo "$value"
-            valuee=`cat world.txt.txt`
-            echo "$valuee"
+          valuee=`cat world.txt`
+          echo "$valuee"
+          value=`cat my-artifact/world.txt`
+          echo "$value"
