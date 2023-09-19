@@ -16,12 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Environment Variables
-        shell: bash
-        run: |
-            ARTIFACTS_SHA="hiudhfi uygsdugf jhgsdf"
-            BUILD_ARTIFACTS=BuildArtifacts_${ARTIFACTS_SHA}
-            echo "ARTIFACTS_DIR=$ARTIFACTS_DIR" >> $GITHUB_ENV
+      - run: mkdir -p path/to/artifact
+
+      - run: echo hello > path/to/artifact/world.txt
+
       - name: Download Artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
