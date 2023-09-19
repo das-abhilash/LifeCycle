@@ -24,7 +24,7 @@ jobs:
 
       - run: mkdir -p path/to/artifact
 
-      - run: echo hello > path/to/artifact/world.txt
+      - run: echo '${{ steps.label-the-PR.outputs.all-labels }}' > path/to/artifact/world.txt
 
       - name: Capture Artifacts
         uses: actions/upload-artifact@v2

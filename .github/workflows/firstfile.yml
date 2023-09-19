@@ -22,9 +22,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: labeler.yml
           name: ${{ env.BUILD_ARTIFACTS }}
-      - shell: bash
+      - name: Read from Downloaded Artifact
         run: |
+          cd path/to/artifact
+          ls -l
           valuee=`cat world.txt`
-          echo "$valuee"
-          value=`cat my-artifact/world.txt`
-          echo "$value"
+          echo "${valuee}"
