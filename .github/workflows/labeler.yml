@@ -32,7 +32,7 @@ jobs:
         run: make
 
       - name: Capture Artifacts
-        uses: actions/upload-artifact@2
+        uses: actions/upload-artifact@v2
         with:
             name: Artifacts_${{ env.ARTIFACTS_SHA }}
             path: path/to/artifact/
