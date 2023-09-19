@@ -31,5 +31,6 @@ jobs:
           echo "${labels}"
           echo "LABELS=$labels" >> $GITHUB_ENV
       - name: Print
+        if: contains(labels, 'feature-activity')
         run: |
           echo "LABELS $LABELS"
