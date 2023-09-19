@@ -25,7 +25,7 @@ jobs:
 
       - name: Read from Downloaded Artifact
         run: |
-          cd /my-artifact/
+          cd my-artifact
           ls -l
           valuee=`cat world.txt`
           echo "${valuee}"
