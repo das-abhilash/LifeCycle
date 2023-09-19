@@ -30,5 +30,5 @@ jobs:
           cat world.txt
       - name: Print
         run: |
-          echo "${{steps.Read.outputs.content}}
-          echo "${{steps.Read.outputs}}
+          echo "${{steps.Read.outputs.content}}"
+          echo "${{steps.Read.outputs}}"
