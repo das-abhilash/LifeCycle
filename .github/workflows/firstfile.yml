@@ -21,11 +21,14 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: labeler.yml
-          name: ${{ env.BUILD_ARTIFACTS }}
 
-      - name: Read from Downloaded Artifact
+      - name: Read
         run: |
+          ls -l
           cd my-artifact
           ls -l
-          valuee=`cat world.txt`
-          echo "${valuee}"
+          cat world.txt
+      - name: Print
+        run: |
+          echo "${{steps.Read.outputs.content}}
+          echo "${{steps.Read.outputs}}
