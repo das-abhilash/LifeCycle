@@ -3,7 +3,7 @@ name: CI notify
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["labeler"]
+    workflows: [ "labeler" ]
     types:
       - completed
 
@@ -22,12 +22,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: labeler.yml
 
-      - name: Read
+      - name: Read from Downloaded Artifact
         run: |
           ls -l
           cd my-artifact
           ls -l
-          echo 'LABELS="${cat world.txt}"' >> $GITHUB_ENV
+          labels=`cat world.txt`
+          echo "${labels}"
+          echo "LABELS=${cat world.txt}" >> $GITHUB_ENV
       - name: Print
         run: |
           echo "LABELS $LABELS"
