@@ -21,17 +21,19 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Build and create artifacts
+      - name: Environment Variables
+        shell: bash
         run: |
-            # Your build steps here
-            echo "This is the artifact content" > artifact.txt
-            # Upload the artifact
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+            ARTIFACTS_SHA=$(git rev-parse HEAD)
+            BUILD_ARTIFACTS=BuildArtifacts_${ARTIFACTS_SHA}
+            echo "ARTIFACTS_DIR=$ARTIFACTS_DIR" >> $GITHUB_ENV
+
+      - name: Build
+        run: make
+
+      - name: Capture Artifacts
+        uses: actions/upload-artifact@2
         with:
-          name: my-artifact
-          path: artifact.txt
+            name: Artifacts_${{ env.ARTIFACTS_SHA }}
+            path: path/to/artifact/
 
