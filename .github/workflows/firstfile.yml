@@ -28,3 +28,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: Build.yml
           name: ${{ env.BUILD_ARTIFACTS }}
+        run: |
+          echo "BUILD_ARTIFACTS"
+          echo "${{ env.BUILD_ARTIFACTS }}"
+          echo "${{ env.BUILD_ARTIFACTS }}"
