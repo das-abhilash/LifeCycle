@@ -29,7 +29,7 @@ jobs:
           ls -l
           labels=`cat world.txt`
           echo "${labels}"
-          echo "LABELS=${cat world.txt}" >> $GITHUB_ENV
+          echo "LABELS=$labels" >> $GITHUB_ENV
       - name: Print
         run: |
           echo "LABELS $LABELS"
