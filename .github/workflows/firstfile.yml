@@ -27,8 +27,7 @@ jobs:
           ls -l
           cd my-artifact
           ls -l
-          echo `cat world.txt` >> $GITHUB_ENV
+          echo 'LABELS="${cat world.txt}"' >> $GITHUB_ENV
       - name: Print
         run: |
-          echo "${{GITHUB_ENV}}"
-          echo "$GITHUB_ENV"
+          echo "LABELS $LABELS"
