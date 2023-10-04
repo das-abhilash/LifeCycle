@@ -8,7 +8,7 @@ on:
 
 jobs:
   ApkSizeTracker:
-    runs-on: [ self-hosted, ci ]
+    runs-on: ubuntu-latest
     name: Apk size tracker
     steps:
       - name: Checkout
