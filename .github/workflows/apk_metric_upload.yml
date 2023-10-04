@@ -1,6 +1,9 @@
 name: App Size Tracker
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     types:
       - opened
