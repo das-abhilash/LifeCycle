@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - "**"
 
 
 jobs:
@@ -18,6 +25,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
 
       - name: Upload action step
         id: apkSize
