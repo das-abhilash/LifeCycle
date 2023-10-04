@@ -31,6 +31,6 @@ jobs:
         id: apk-size-tracker
         uses: zsfVishnu/apk-size-tracker@v1.0.0
         with:
-          flavor: debug
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          flavor: 'debug'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           threshold: 0
