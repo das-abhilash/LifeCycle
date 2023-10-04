@@ -17,6 +17,7 @@ class Main3Activity : AppCompatActivity() {
         super.onPause()
     }
 
+
     override fun onDestroy() {
         Log.d("lifecycle-test","Main3Activity - onDestroy")
         super.onDestroy()
