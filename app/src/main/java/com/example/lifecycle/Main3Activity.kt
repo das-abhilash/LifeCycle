@@ -18,6 +18,11 @@ class Main3Activity : AppCompatActivity() {
     }
 
 
+
+
+
+
+
     override fun onDestroy() {
         Log.d("lifecycle-test","Main3Activity - onDestroy")
         super.onDestroy()
