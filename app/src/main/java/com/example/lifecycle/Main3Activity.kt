@@ -12,21 +12,17 @@ class Main3Activity : AppCompatActivity() {
         Log.d("lifecycle-test","Main3Activity - onCreate")
     }
 
+
     override fun onPause() {
         Log.d("lifecycle-test","Main3Activity - onPause")
         super.onPause()
     }
 
-
-
-
-
-
-
     override fun onDestroy() {
         Log.d("lifecycle-test","Main3Activity - onDestroy")
         super.onDestroy()
     }
+
 
     override fun onStart() {
         Log.d("lifecycle-test","Main3Activity - onStart")
