@@ -1,4 +1,4 @@
-name: My Workflow
+name: Build Number
 
 on:
   push:
@@ -15,3 +15,5 @@ jobs:
 
       - name: Use onyxmueller/build-tag-number@v1
         uses: onyxmueller/build-tag-number@v1
+        with:
+          token: ${{secrets.github_token}}
