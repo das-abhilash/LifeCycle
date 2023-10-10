@@ -25,7 +25,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1  # Use the latest version available
         with:
-            ruby-version: 2.x
+            ruby-version: 3.2.1
 
       - name: Install Dependabot CLI
         run: gem install dependabot --no-document
