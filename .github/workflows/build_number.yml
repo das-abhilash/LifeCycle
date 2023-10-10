@@ -23,9 +23,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1  # Use the latest version available
         with:
-          ruby-version: 2.7
+            ruby-version: 2.x
 
       - name: Install Dependabot CLI
         run: gem install dependabot --no-document
