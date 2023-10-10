@@ -28,7 +28,7 @@ jobs:
             ruby-version: 3.2.1
 
       - name: Install Dependabot CLI
-        run: gem install dependabot --no-document
+        run: gem install dependabot-bundler --no-document
 
       - name: Run Dependabot
         run: dependabot --version
