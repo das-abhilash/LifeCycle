@@ -4,16 +4,31 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - "**"
+
+
 
 jobs:
-  build:
+  update-dependencies:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use onyxmueller/build-tag-number@v1
-        uses: onyxmueller/build-tag-number@v1
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
         with:
-          token: ${{secrets.github_token}}
+          ruby-version: 2.7
+
+      - name: Install Dependabot CLI
+        run: gem install dependabot --no-document
+
+      - name: Run Dependabot
+        run: dependabot --version
