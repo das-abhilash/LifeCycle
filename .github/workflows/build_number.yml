@@ -31,4 +31,8 @@ jobs:
         run: gem install dependabot-bundler --no-document
 
       - name: Run Dependabot
-        run: dependabot --version
+        run: |
+          bundle config set path '.bundle'
+          bundle install
+          bundle exec dependabot --version
+          bundle exec dependabot update
